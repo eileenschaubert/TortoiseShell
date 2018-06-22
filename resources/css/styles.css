@@ -1,20 +1,98 @@
+/* "Tamming" Box Model With Reset */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* main styles */
 body {
   font-family: Helvetica;
   font-size: 18px;
   line-height: 1.4;
 }
+
+/* center items in container */
 .container {
-  width: 960px;
-}
-.top-banner {
-  border: 10px solid blue;
-  
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.main-banner {
+/* banner and nav bar styling */
+.top-banner {
+  background-color: cadetblue;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  top: 1rem;
+}
+
+.company {
+  display: flex;
+  align-items: center; // centers text & logo
+}
+.top-banner .logo {
+  height: 1.5rem;
+  padding-right: 1rem;
+  padding-left: 2rem;
+}
+.single-nav {
+  padding-right: 1em;
+}
+
+/* Base styles for menus */
+
+.single-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-nav li a {
+	display: block;
+	text-decoration: none;
+	color: white;
+	padding: 1em;
+}
+/* fills entire block of anchor tag, makes them equal sizd */
+.single-nav li {
+    flex: 1 0 auto;
+    text-align: center;
+}
+
+/* adjust menu items on mobile */
+/* need to adjust scaling of full-menu for tablet - it wraps @552px, instead of shrinking */
+.mobile-nav {
+  display: none;
+}
+ @media screen and (max-width: 470px) {
+  .full-nav {
+    display: none;
+  }
+  .mobile-nav {
+    display: block;
+  }
+}
+
+.hero {
   background-image: url(../images/glasses-bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 25rem;
+  height: 31rem;
 }
+
+
+/* .headline {
+  position: relative;
+  top: 9rem;
+  width: 20rem;
+  padding: 2rem 3rem;
+  background-color: black;
+  color: white;
+ */
