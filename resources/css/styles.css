@@ -7,6 +7,11 @@
   box-sizing: inherit;
 } */
 
+/* Overall Notes to get to completion */
+/* Is there a better way to scale the hero photo more smoothly? */
+/* Is there a way to have the nav links scale down instead of wrapping? */
+/* How to get the product descriptions to center if using padding vs container size? */
+
 
 /* main styles */
 body {
@@ -35,7 +40,7 @@ body {
 
 .company {
   display: flex;
-  align-items: center; // centers text & logo
+  align-items: center; // centers text & logo vertically
 }
 .top-banner .logo {
   height: 1.5rem;
@@ -59,18 +64,18 @@ body {
 	color: white;
 	padding: 1em;
 }
-/* fills entire block of anchor tag, makes them equal sizd */
+/* fills entire block of anchor tag, makes them equal sized */
 .single-nav li {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     text-align: center;
 }
 
-/* adjust menu items on mobile */
+/* adjust menu items on mobile 470px?*/
 /* need to adjust scaling of full-menu for tablet - it wraps @552px, instead of shrinking */
 .mobile-nav {
   display: none;
 }
- @media screen and (max-width: 470px) {
+ @media screen and (max-width: 566px) {
   .full-nav {
     display: none;
   }
@@ -79,11 +84,16 @@ body {
   }
 }
 
+
+
+
+/* image isn't scaling down */
 .hero {
   background-image: url(../images/glasses-bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  width: 100%;
   height: 31rem;
 }
 
@@ -94,6 +104,7 @@ body {
   margin-right: -2rem;
   margin-top: 14rem;
 }
+
 .headline h1 {
   width: auto;
   margin: 0;
@@ -103,6 +114,56 @@ body {
   padding: 1.5rem 5rem;
   background-color: white;
 }
+
+
+/* adjust max-width after styling */
+@media screen and (max-width: 960px) {
+  .top-banner {
+    top: 0;
+  }
+  .hero {
+    height: 22rem;
+    background-position: 50% 50%;
+  }
+
+.headline {
+  margin-right: 2rem;
+  margin-top: 9rem;
+}
+
+.headline h1 {
+  font-size: 1.33rem;
+  padding: 0.75rem 4rem;
+}
+}
+
+
+
+@media screen and (max-width: 566px) {
+  .hero {
+    height: 17rem;
+    background-position: 20% 20%;
+  }
+
+  .headline {
+    text-align: center;
+    margin-top: 9rem;
+    margin-right: 0;
+  }
+
+  .headline h1 {
+    width: 100%;
+    margin: 0;
+    font-size: 1rem;
+    padding: 1rem auto;
+  }
+}
+
+
+
+
+
+
 
 /* Products / Services */
 .products {
@@ -169,35 +230,86 @@ body {
 }
  */
 
-/* .info .title {
-  display: block;
-  padding: 1rem 2rem;
-  background-color: black;
-  color: white;
-} */
-
-footer {
-  background-color: azure;
-  padding: 4rem 0;
-  margin-top: 5rem;
-  color: black;
+/* business info */
+.business-info {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
 }
+.info-title {
+  display: block;
+  width: 10rem;
+  padding: 0.5rem 1.25rem 0.5rem 3rem;
+  background-color: cadetblue;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+.info {
+  width: 47.5%;
+  margin-bottom: 5rem;
+}
+
+
+/* business info - mobile styling */
+/* adjust smaller font to have margin and line spacing */
+@media only screen and (max-width: 670px) {
+  .business-info, .info {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+.info {
+  margin-bottom: 4rem;
+}
+
+  .info-title {
+    width: 100%;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .info-detail {
+    font-size: 0.77rem;
+    margin: 1rem .5rem 4rem .5rem;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer - desktop and tablet styling */
+
 footer .container {
   display: flex;
   align-items: center;
+  background-color: azure;
+  padding: 4rem 0;
+  color: black;
 }
+
 footer .logo {
   height: 1.5rem;
   margin-right: 1rem;
   margin-left: 4rem;
 }
 
-
-
+/* footer - mobile styling */
 @media only screen and (max-width: 470px) {
   footer .logo {
     margin: auto;
   }
+
   .wide-title {
     display: none;
   }
